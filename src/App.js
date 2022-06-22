@@ -9,8 +9,14 @@ function App() {
   const [list, setList] = useState([]);
 
   const handleSubmit = (e) => {
-    e.preventDetault();
-    console.log('hello');
+    e.preventDefault();
+    try {
+      let colors = new Values(color).all(10);
+      console.log(colors);
+    } catch (error) {
+      setError(true);
+      console.log(error);
+    }
   };
 
   return (
